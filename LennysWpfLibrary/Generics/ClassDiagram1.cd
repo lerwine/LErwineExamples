@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LennysWpfLibrary.Generics.BaseClassEqualityHelper&lt;T&gt;">
+    <Position X="3.75" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAEgACAAAAAAAAAAMAAAAAAAAEAAAA=</HashCode>
+      <FileName>Generics\BaseClassEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.NullableEqualityHelper&lt;T&gt;">
+    <Position X="11.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAEgAAAAAAAAAAAAIACAAAAAAEAAAA=</HashCode>
+      <FileName>Generics\NullableEqualityHelper.cs</FileName>
+      <NewMemberFileName>Generics\EqualityHelper.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.BaseStructEqualityHelper&lt;T&gt;">
+    <Position X="19.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgACAAAAAAAAAAMAAAAAAAAEAAAA=</HashCode>
+      <FileName>Generics\BaseStructEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.BaseGenericEqualityHelper&lt;T&gt;">
+    <Position X="28.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAEgACAAAAAAAAAAMAAAAAAAAEAAAA=</HashCode>
+      <FileName>Generics\BaseGenericEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.EquatableClassEqualityHelper&lt;T&gt;">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\EquatableClassEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.ComparableClassEqualityHelper&lt;T&gt;">
+    <Position X="5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\ComparableClassEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.GComparableClassEqualityHelper&lt;T&gt;">
+    <Position X="7.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\GComparableClassEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.ClassEqualityHelper&lt;T&gt;">
+    <Position X="2.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\ClassEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.EquatableStructEqualityHelper&lt;T&gt;">
+    <Position X="20.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\EquatableStructEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.ComparableStructEqualityHelper&lt;T&gt;">
+    <Position X="16.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\ComparableStructEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.GComparableStructEqualityHelper&lt;T&gt;">
+    <Position X="18.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\GComparableStructEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.StructEqualityHelper&lt;T&gt;">
+    <Position X="23" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\StructEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.EquatableGenericEqualityHelper&lt;T&gt;">
+    <Position X="27.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\EquatableGenericEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.ComparableGenericEqualityHelper&lt;T&gt;">
+    <Position X="29.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\ComparableGenericEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.GComparableGenericEqualityHelper&lt;T&gt;">
+    <Position X="32" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\GComparableGenericEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.GenericEqualityHelper&lt;T&gt;">
+    <Position X="24.75" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\GenericEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.EnumEqualityHelper&lt;T&gt;">
+    <Position X="18.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generics\EnumEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.EqualityHelper&lt;T&gt;">
+    <Position X="16.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAMAAAAAAAAEAAAA=</HashCode>
+      <FileName>Generics\EqualityHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.StringEqualityHelper">
+    <Position X="14" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAEAAAA=</HashCode>
+      <FileName>Generics\StringEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LennysWpfLibrary.Generics.BooleanEqualityHelper">
+    <Position X="9.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAEAAAA=</HashCode>
+      <FileName>Generics\BooleanEqualityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

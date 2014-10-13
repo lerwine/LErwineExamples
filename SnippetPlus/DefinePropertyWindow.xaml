@@ -1,0 +1,74 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="clr-namespace:SnippetPlus"
+        xmlns:Converters="clr-namespace:SnippetPlus.Converters" x:Class="SnippetPlus.DefinePropertyWindow"
+        Title="Define Property" Height="600" Width="800" DataContext="{DynamicResource ResourceKey=ViewModel}">
+    <Window.Resources>
+        <Converters:BoolToVisibilityValueConverter x:Key="BoolToVisibilityValueConverter"/>
+        <Converters:StringToVisibilityValueConverter x:Key="StringToVisibilityValueConverter"/>
+        <vm:DefinePropertyViewModel x:Key="ViewModel" PropertyNameText="MyProperty">
+            <vm:DefinePropertyViewModel.PropertyTypeOptions>
+                <vm:PropertyTypeItem />
+                <vm:PropertyTypeItem TypeName="int" DefaultValue="0" Value="0" />
+                <vm:PropertyTypeItem DefaultValue="false" TypeName="bool" Value="false" />
+                <vm:PropertyTypeItem DefaultValue="0.0" TypeName="double" Value="0.0" />
+                <vm:PropertyTypeItem />
+            </vm:DefinePropertyViewModel.PropertyTypeOptions>
+        </vm:DefinePropertyViewModel>
+    </Window.Resources>
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="230*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="229*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.RowSpan="2" Text="Property Name:" />
+            <TextBox Grid.Column="1" Text="{Binding PropertyNameText}" />
+            <TextBlock Grid.RowSpan="2" Grid.Column="2" Text="Backing field name:" />
+            <TextBox Grid.Column="3" Text="{Binding LCFirstPropertyNameText}" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding PropertyNameErrorMessage, Mode=OneWay}" Visibility="{Binding PropertyNameErrorMessage, Converter={StaticResource StringToVisibilityValueConverter}, Mode=OneWay}" />
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding LCFirstPropertyNameErrorMessage, Mode=OneWay}" Visibility="{Binding LCFirstPropertyNameErrorMessage, Converter={StaticResource StringToVisibilityValueConverter}, Mode=OneWay}" />
+            <TextBlock Grid.Row="2" Text="Type:" />
+            <ComboBox Grid.Row="2" Grid.Column="1">
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="ComboBoxItem">
+                        
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+            <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" />
+        </Grid>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+            <TextBlock Text="#region " />
+            <TextBlock Text="{Binding PropertyNameText}" />
+            <TextBlock Text=" Property Members" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Visibility="{Binding RequiresConstantPropertyName, Converter={StaticResource BoolToVisibilityValueConverter}}">
+            <TextBlock Text="public const string PropertyName_" />
+            <TextBlock Text="{Binding PropertyNameText}" />
+            <TextBlock Text=" = " />
+            <TextBlock Text="&quot;" Visibility="{Binding ShowQuotesForDefaultValue, Converter={StaticResource BoolToVisibilityValueConverter}}" />
+            <TextBlock Text="{Binding PropertyNameText}" />
+            <TextBlock Text="&quot;" Visibility="{Binding ShowQuotesForDefaultValue, Converter={StaticResource BoolToVisibilityValueConverter}}" />
+            <TextBlock Text=";" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Visibility="{Binding RequiresBackingField, Converter={StaticResource BoolToVisibilityValueConverter}}">
+            <TextBlock Text="private " />
+            <TextBlock Text="MyType" />
+            <TextBlock Text=" _" />
+            <TextBlock Text="{Binding LCFirstPropertyNameText}" />
+            <TextBlock Text=" = &quot;" />
+            <TextBlock Text="DefaultValue" />
+            <TextBlock Text="&quot;;" />
+        </StackPanel>
+        <TextBlock Text="#endregion" Margin="0,8,0,0" />
+    </StackPanel>
+</Window>

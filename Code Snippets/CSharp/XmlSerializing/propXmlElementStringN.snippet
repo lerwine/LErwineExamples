@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Define a non-null string-valued Property which serializes to an element.</Title>
+            <Shortcut>propXmlElementStringN</Shortcut>
+            <Description>Code snippet for a non-null string-valued property which is serializable as an element</Description>
+            <Author>Leonard T. Erwine</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+          <References>
+            <Reference><Assembly>System.Xml</Assembly></Reference>
+          </References>
+          <Imports>
+            <Import>
+              <Namespace>System.Xml.Serialization</Namespace>
+            </Import>
+          </Imports>
+          <Declarations>
+              <Literal>
+                  <ID>property</ID>
+                  <ToolTip>Property Name</ToolTip>
+                  <Default>MyProperty</Default>
+              </Literal>
+              <Literal>
+                  <ID>field</ID>
+                  <ToolTip>Name of backing field</ToolTip>
+                  <Default>myProperty</Default>
+              </Literal>
+              <Literal>
+                  <ID>namespace</ID>
+                  <ToolTip>URL of namespace</ToolTip>
+                  <Default>http://tempuri.org</Default>
+              </Literal>
+              <Literal Editable="false">
+                  <ID>ownerclass</ID>
+                  <ToolTip>The owning class of this Property.  Typically the class that it is declared in.</ToolTip>
+                <Function>ClassName()</Function>
+                  <Default>ownerclass</Default>
+              </Literal>
+          </Declarations>
+          <Code Language="csharp">
+              <![CDATA[
+#region $property$ Property Members
+
+public const string ChildElementName_$property$ = "$property$";
+
+private string _$field$ = "";
+
+[XmlElement($ownerclass$.ChildElementName_$property$, Namespace = "$namespace$")]
+public string $property$
+{
+    get { return this._$field$; }
+    set { this._$field$ = (value == null) ? "" : value; }
+}
+
+#endregion
+$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

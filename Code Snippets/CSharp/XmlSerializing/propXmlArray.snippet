@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Define an array Property which serializes to an element.</Title>
+            <Shortcut>propXmlArray</Shortcut>
+            <Description>Code snippet for an array property which is serializable as an element.</Description>
+            <Author>Leonard T. Erwine</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+          <References>
+            <Reference><Assembly>System.Xml</Assembly></Reference>
+          </References>
+          <Imports>
+            <Import>
+              <Namespace>System.Xml.Serialization</Namespace>
+            </Import>
+          </Imports>
+          <Declarations>
+              <Literal>
+                  <ID>type</ID>
+                  <ToolTip>Item Type</ToolTip>
+                  <Default>object</Default>
+              </Literal>
+              <Literal>
+                  <ID>property</ID>
+                  <ToolTip>Property Name</ToolTip>
+                  <Default>MyProperty</Default>
+              </Literal>
+              <Literal>
+                  <ID>field</ID>
+                  <ToolTip>Name of backing field</ToolTip>
+                  <Default>myProperty</Default>
+              </Literal>
+              <Literal>
+                  <ID>namespace</ID>
+                  <ToolTip>Namespace specification</ToolTip>
+                  <Default>, Namespace = ""</Default>
+              </Literal>
+              <Literal Editable="false">
+                  <ID>ownerclass</ID>
+                  <ToolTip>The owning class of this Property.  Typically the class that it is declared in.</ToolTip>
+                <Function>ClassName()</Function>
+                  <Default>ownerclass</Default>
+              </Literal>
+          </Declarations>
+          <Code Language="csharp">
+              <![CDATA[
+#region $property$ Property Members
+
+public const string ChildElementName_$property$ = "$property$";
+
+private $type$[] _$field$ = null;
+
+[XmlArray($ownerclass$.ChildElementName_$property$$namespace$)]
+public $type$[] $property$
+{
+    get { return this._$field$; }
+    set { this._$field$ = value; }
+}
+
+#endregion
+$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

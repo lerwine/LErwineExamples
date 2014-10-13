@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Define a relay command property</Title>
+      <Shortcut>proprelaycmd</Shortcut>
+      <Description>Code snippet for a relay command property.</Description>
+      <Author>Leonard T. Erwine</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>command</ID>
+          <ToolTip>Command Name</ToolTip>
+          <Default>MyClick</Default>
+        </Literal>
+        <Literal>
+          <ID>field</ID>
+          <ToolTip>Base Name for backing field</ToolTip>
+          <Default>myClick</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+<![CDATA[
+#region $command$ Command Property Members
+
+private Events.RelayCommand _$field$Command = null;
+
+public Events.RelayCommand $command$Command
+{
+    get
+    {
+        if (this._$field$Command == null)
+            this._$field$Command = new Events.RelayCommand(this.On$command$);
+
+        return this._$field$Command;
+    }
+}
+
+protected virtual void On$command$(object parameter)
+{
+    // TODO: Implement On$command$ Logic
+}
+
+#endregion
+$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

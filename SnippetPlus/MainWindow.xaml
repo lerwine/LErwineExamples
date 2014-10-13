@@ -1,0 +1,18 @@
+﻿<Window x:Name="hostWindow" x:Class="SnippetPlus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Snippet Plus" Height="350" Width="525" xmlns:vm="clr-namespace:SnippetPlus" DataContext="{DynamicResource ResourceKey=ViewModel}">
+    <Window.Resources>
+        <vm:MainViewModel x:Key="ViewModel" HostWindow="{Binding ElementName=hostWindow, Mode=OneWay}" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="Class" Command="{Binding ClassMenuClickCommand, Mode=OneWay}"/>
+            <MenuItem Header="Property" Command="{Binding PropertyMenuClickCommand, Mode=OneWay}"/>
+        </Menu>
+    </Grid>
+</Window>
