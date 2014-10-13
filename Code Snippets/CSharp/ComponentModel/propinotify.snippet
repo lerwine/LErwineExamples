@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Define a property which raises the PropertyChanged event</Title>
+      <Shortcut>propinotify</Shortcut>
+      <Description>Code snippet for a property which raises the PropertyChanged event upon change.</Description>
+      <Author>Leonard T. Erwine</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>type</ID>
+          <ToolTip>Property Type</ToolTip>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>property</ID>
+          <ToolTip>Property Name</ToolTip>
+          <Default>MyProperty</Default>
+        </Literal>
+        <Literal>
+          <ID>field</ID>
+          <ToolTip>Backing Field</ToolTip>
+          <Default>myVar</Default>
+        </Literal>
+        <Literal>
+          <ID>ownerclass</ID>
+          <Function>ClassName()</Function>
+ s         <ToolTip>The owning class of this Property.  Typically the class that it is declared in.</ToolTip>
+        </Literal>
+        <Literal>
+          <ID>defaultvalue</ID>
+          <ToolTip>The default value for this property.</ToolTip>
+          <Default>0</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+<![CDATA[
+#region $property$ Property Members
+
+private $type$ _$field$ = $defaultvalue$;
+
+public const string PropertyName_$property$ = "$property$";
+
+public $type$ $property$
+{
+    get { return this._$field$; }
+    set
+    {
+        if (this._$field$ == value)
+            return;
+
+        this._$field$ = value;
+        this.RaisePropertyChanged($ownerclass$.PropertyName_$property$);
+    }
+}
+
+#endregion
+$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

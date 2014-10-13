@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:erwine.leonard.t.examples:wpfexamples.converters"
+           xmlns:ex="urn:erwine.leonard.t.examples:wpfexamples.converters"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Null" />
+  <xs:element name="Object" />
+  <xs:simpleType name="ObjectName">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:pattern value="^[_a-zA-Z][_a-zA-Z\d]*$" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FullObjectName">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:pattern value="^[_a-zA-Z][_a-zA-Z\d]*(\.[_a-zA-Z][_a-zA-Z\d]*)*$" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ObjectTypeConstants">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PrimitiveTypeConstants">
+    <xs:union memberTypes="ex:ObjectTypeConstants">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MinValue" />
+          <xs:enumeration value="MaxValue" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:element name="String" type="xs:string" />
+  <xs:element name="Boolean">
+    <xs:complexType>
+      <xs:attribute name="Value" type="xs:boolean" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Byte">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:unsignedByte ex:PrimitiveTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SByte">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:byte ex:PrimitiveTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Int16">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:short ex:PrimitiveTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UInt16">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:unsignedShort ex:PrimitiveTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Int32">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:integer ex:PrimitiveTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UInt32">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:unsignedInt ex:PrimitiveTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Int64">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:long ex:PrimitiveTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UInt64">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:unsignedLong ex:PrimitiveTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Single">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:float ex:PrimitiveTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Double">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:double ex:PrimitiveTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Decimal">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:decimal ex:PrimitiveTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Uri">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:anyURI ex:ObjectTypeConstants" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimeSpan">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:duration xs:integer ex:PrimitiveTypeConstants">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Zero" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:union>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DateTime">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:date xs:dateTime ex:PrimitiveTypeConstants">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Now" />
+                <xs:enumeration value="UtcNow" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:union>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Visibility">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="ex:ObjectTypeConstants">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Visible" />
+                <xs:enumeration value="Hidden" />
+                <xs:enumeration value="Collapsed" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:union>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BinaryObject">
+    <xs:complexType>
+      <xs:attribute name="Type" type="ex:FullObjectName" />
+      <xs:attribute name="Data">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:base64Binary" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XmlObject">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="1">
+        <xs:any minOccurs="1" maxOccurs="1" processContents="skip" />
+      </xs:sequence>
+      <xs:attribute name="Type" type="ex:FullObjectName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CollectionType">
+    <xs:attribute name="BaseType" use="optional" default="Array">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Array" />
+          <xs:enumeration value="System.Collections.Generic.List" />
+          <xs:enumeration value="System.Collections.ObjectModel.Collection" />
+          <xs:enumeration value="System.Collections.ObjectModel.ObservableCollection" />
+          <xs:enumeration value="System.Collections.ObjectModel.ReadOnlyCollection" />
+          <xs:enumeration value="System.Collections.ObjectModel.ReadOnlyObservableCollection" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="ObjectArrayType">
+    <xs:complexContent>
+      <xs:extension base="ex:CollectionType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ex:Null" />
+          <xs:element ref="ex:Object" />
+          <xs:element ref="ex:ObjectArray" />
+          <xs:element ref="ex:String" />
+          <xs:element ref="ex:StringArray" />
+          <xs:element ref="ex:Boolean" />
+          <xs:element ref="ex:BooleanArray" />
+          <xs:element ref="ex:NullableBooleanArray" />
+          <xs:element ref="ex:Byte" />
+          <xs:element ref="ex:ByteArray" />
+          <xs:element ref="ex:SByte" />
+          <xs:element ref="ex:SByteArray" />
+          <xs:element ref="ex:Int16" />
+          <xs:element ref="ex:Int16Array" />
+          <xs:element ref="ex:NullableInt16Array" />
+          <xs:element ref="ex:UInt16" />
+          <xs:element ref="ex:UInt16Array" />
+          <xs:element ref="ex:NullableUInt16Array" />
+          <xs:element ref="ex:Int32" />
+          <xs:element ref="ex:Int32Array" />
+          <xs:element ref="ex:NullableInt32Array" />
+          <xs:element ref="ex:UInt32" />
+          <xs:element ref="ex:UInt32Array" />
+          <xs:element ref="ex:NullableUInt32Array" />
+          <xs:element ref="ex:Int64" />
+          <xs:element ref="ex:Int64Array" />
+          <xs:element ref="ex:NullableInt64Array" />
+          <xs:element ref="ex:UInt64" />
+          <xs:element ref="ex:UInt64Array" />
+          <xs:element ref="ex:NullableUInt64Array" />
+          <xs:element ref="ex:Single" />
+          <xs:element ref="ex:Double" />
+          <xs:element ref="ex:Decimal" />
+          <xs:element ref="ex:Uri" />
+          <xs:element ref="ex:TimeSpan" />
+          <xs:element ref="ex:DateTime" />
+          <xs:element ref="ex:Visibility" />
+          <xs:element ref="ex:BinaryObject" />
+          <xs:element ref="ex:XmlObject" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObjectArray" type="ex:ObjectArrayType" />
+  <xs:element name="ByteArray">
+    <xs:complexType>
+      <xs:attribute name="Value">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:base64Binary" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="BooleanArrayType">
+    <xs:complexContent>
+      <xs:extension base="ex:CollectionType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ex:Boolean" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BooleanArray" type="ex:BooleanArrayType" />
+  <xs:element name="NullableBooleanArray">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ex:BooleanArrayType">
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="ex:Null" />
+          </xs:choice>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StringArray">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ex:CollectionType">
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="ex:Null" />
+            <xs:element ref="ex:String" />
+          </xs:choice>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Int16ArrayType">
+    <xs:complexContent>
+      <xs:extension base="ex:CollectionType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ex:Int16" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Int16Array" type="ex:Int16ArrayType" />
+  <xs:element name="NullableInt16Array">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ex:Int16ArrayType">
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="ex:Null" />
+          </xs:choice>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UInt16ArrayType">
+    <xs:complexContent>
+      <xs:extension base="ex:CollectionType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ex:UInt16" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UInt16Array" type="ex:UInt16ArrayType" />
+  <xs:element name="NullableUInt16Array">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ex:UInt16ArrayType">
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="ex:Null" />
+          </xs:choice>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Int32ArrayType">
+    <xs:complexContent>
+      <xs:extension base="ex:CollectionType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ex:Int32" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Int32Array" type="ex:Int32ArrayType" />
+  <xs:element name="NullableInt32Array">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ex:Int32ArrayType">
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="ex:Null" />
+          </xs:choice>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UInt32ArrayType">
+    <xs:complexContent>
+      <xs:extension base="ex:CollectionType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ex:UInt32" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UInt32Array" type="ex:UInt32ArrayType" />
+  <xs:element name="NullableUInt32Array">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ex:UInt32ArrayType">
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="ex:Null" />
+          </xs:choice>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TestValueCollectionType">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Expected" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:choice minOccurs="1" maxOccurs="1">
+            <xs:element ref="ex:Null" />
+            <xs:element ref="ex:Boolean" />
+            <xs:element ref="ex:Visibility" />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConverterTestData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="BoolToVisibilityValueConverter">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:choice maxOccurs="unbounded">
+                <xs:element name="Expected">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="PropertyRef" type="ex:PropertyRefType" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="TestValues">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Source">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element minOccurs="0" name="Boolean">
+                              <xs:complexType>
+                                <xs:attribute name="value" type="xs:boolean" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="Null" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element maxOccurs="unbounded" name="Property">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="Null" />
+                            <xs:element maxOccurs="unbounded" name="Visibility">
+                              <xs:complexType>
+                                <xs:attribute name="Value" type="xs:string" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                          <xs:attribute name="Name" type="xs:string" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PropertyRefType">
+    <xs:attribute name="Source" type="xs:string" use="required" />
+  </xs:complexType>
+</xs:schema>

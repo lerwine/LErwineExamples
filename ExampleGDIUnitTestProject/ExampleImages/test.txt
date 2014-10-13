@@ -1,0 +1,208 @@
+Image01.BMP
+	Image Flags: ColorSpaceRgb, HasRealDpi, HasRealPixelSize, ReadOnly
+	Pallette Flags: Halftone
+	Width: 16, Height: 16
+	HorizontalResolution: 71.9836, VerticalResolution: 71.9836
+	PixelFormats: Gdi, Format24bppRgb
+	Type: Bmp
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: False
+Image02.bmp
+	Image Flags: ColorSpaceRgb, HasRealDpi, HasRealPixelSize, ReadOnly
+	Pallette Flags: Halftone
+	Width: 16, Height: 16
+	HorizontalResolution: 95.9866, VerticalResolution: 95.9866
+	PixelFormats: Gdi, Format24bppRgb
+	Type: Bmp
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: False
+Image03.bmp
+	Image Flags: ColorSpaceRgb, HasRealDpi, HasRealPixelSize, ReadOnly
+	Pallette Flags: Halftone
+	Width: 196, Height: 190
+	HorizontalResolution: 299.9994, VerticalResolution: 299.9994
+	PixelFormats: Gdi, Format24bppRgb
+	Type: Bmp
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: False
+Image04.bmp
+	Image Flags: ColorSpaceRgb, HasRealPixelSize, ReadOnly
+	Pallette Flags: Halftone
+	Width: 32, Height: 32
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Gdi, Format32bppRgb
+	Type: Bmp
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: False
+Image05.gif
+	Image Flags: ColorSpaceRgb, HasRealDpi, HasRealPixelSize, ReadOnly
+	Pallette Flags: HasAlpha
+	Width: 200, Height: 200
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Gdi, Alpha, Canonical, Format32bppArgb
+	Type: Gif
+	Frame Counts: 40
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: True
+Image06.gif
+	Image Flags: HasAlpha, ColorSpaceRgb, HasRealDpi, HasRealPixelSize, ReadOnly
+	Pallette Flags: HasAlpha
+	Width: 32, Height: 22
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Gdi, Alpha, Canonical, Format32bppArgb
+	Type: Gif
+	Frame Counts: 2
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: True
+	Has Alpha 2: True
+Image07.JPEG
+	Image Flags: ColorSpaceRgb, HasRealPixelSize, ReadOnly
+	Pallette Flags: Halftone
+	Width: 127, Height: 26
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Gdi, Format24bppRgb
+	Type: Jpeg
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: False
+Image08.jpg
+	Image Flags: ColorSpaceRgb, HasRealPixelSize, ReadOnly
+	Pallette Flags: HasAlpha, Halftone
+	Width: 134, Height: 71
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Gdi, Format24bppRgb
+	Type: Jpeg
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: False
+Image09.jpeg
+	Image Flags: ColorSpaceRgb, HasRealPixelSize, ReadOnly
+	Pallette Flags: GrayScale, Halftone
+	Width: 148, Height: 185
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Gdi, Format24bppRgb
+	Type: Jpeg
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: False
+Image10.JPG
+	Image Flags: ColorSpaceRgb, HasRealDpi, HasRealPixelSize, ReadOnly
+	Pallette Flags: 
+	Width: 196, Height: 190
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Gdi, Format24bppRgb
+	Type: Jpeg
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: False
+Image11.png
+	Image Flags: HasAlpha, ColorSpaceRgb, HasRealDpi, HasRealPixelSize, ReadOnly
+	Pallette Flags: 
+	Width: 32, Height: 32
+	HorizontalResolution: 72.009, VerticalResolution: 72.009
+	PixelFormats: Gdi, Alpha, Canonical, Format32bppArgb
+	Type: Png
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: True
+	Has Alpha 2: True
+Image12.PNG
+	Image Flags: ColorSpaceRgb, HasRealPixelSize, ReadOnly
+	Pallette Flags: GrayScale, Halftone
+	Width: 196, Height: 190
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Gdi, Format24bppRgb
+	Type: Png
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: False
+Image13.TIF
+	Image Flags: ColorSpaceGray, HasRealPixelSize, ReadOnly
+	Pallette Flags: GrayScale
+	Width: 200, Height: 200
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Indexed, Gdi, Format8bppIndexed
+	Type: Tiff
+	Frame Counts: 1
+	Pallette Entry Count: 256
+	ColorSpace: Gray
+	Is Indexed: True
+	Has Alpha: False
+	Has Alpha 2: False
+Image14.tif
+	Image Flags: ColorSpaceRgb, HasRealPixelSize, ReadOnly
+	Pallette Flags: GrayScale, Halftone
+	Width: 512, Height: 512
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Gdi, Format24bppRgb
+	Type: Tiff
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: False
+Image15.tiff
+	Image Flags: ColorSpaceRgb, HasRealPixelSize, ReadOnly
+	Pallette Flags: GrayScale, Halftone
+	Width: 480, Height: 362
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Gdi, Format24bppRgb
+	Type: Tiff
+	Frame Counts: 1
+	Pallette Entry Count: 0
+	ColorSpace: Rgb
+	Is Indexed: False
+	Has Alpha: False
+	Has Alpha 2: False
+Image16.gif
+	Image Flags: HasAlpha, ColorSpaceRgb, HasRealDpi, HasRealPixelSize, ReadOnly
+	Pallette Flags: HasAlpha
+	Width: 16, Height: 16
+	HorizontalResolution: 96, VerticalResolution: 96
+	PixelFormats: Indexed, Gdi, Format8bppIndexed
+	Type: Gif
+	Frame Counts: 1
+	Pallette Entry Count: 128
+	ColorSpace: Rgb
+	Is Indexed: True
+	Has Alpha: True
+	Has Alpha 2: False

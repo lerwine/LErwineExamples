@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExampleTestData1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:test2.com">
+  <Values>
+    <anyType xsi:type="xsd:boolean">true</anyType>
+    <anyType xsi:type="xsd:boolean">false</anyType>
+    <anyType xsi:type="xsd:int">15</anyType>
+    <anyType xsi:type="xsd:unsignedByte">128</anyType>
+    <anyType xsi:type="xsd:byte">12</anyType>
+    <anyType xmlns:q1="http://microsoft.com/wsdl/types/" xsi:type="q1:char">120</anyType>
+    <anyType xsi:type="xsd:short">1</anyType>
+    <anyType xsi:type="xsd:unsignedShort">2</anyType>
+    <anyType xsi:type="xsd:int">3</anyType>
+    <anyType xsi:type="xsd:unsignedInt">4</anyType>
+    <anyType xsi:type="xsd:long">5</anyType>
+    <anyType xsi:type="xsd:unsignedLong">6</anyType>
+    <anyType xsi:type="xsd:dateTime">2014-09-26T19:16:17.7754175-04:00</anyType>
+    <anyType xsi:type="xsd:decimal">6.5</anyType>
+    <anyType xsi:type="xsd:double">12.5</anyType>
+    <anyType xsi:type="xsd:float">1500.3</anyType>
+    <anyType xsi:type="xsd:string">testing</anyType>
+    <anyType xsi:nil="true" />
+    <anyType xsi:type="ArrayOfAnyType" />
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:boolean">true</anyType>
+      <anyType xsi:type="xsd:boolean">false</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:int">14</anyType>
+      <anyType xsi:type="xsd:int">0</anyType>
+      <anyType xsi:type="xsd:int">7</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:unsignedByte">1</anyType>
+      <anyType xsi:type="xsd:unsignedByte">23</anyType>
+      <anyType xsi:type="xsd:unsignedByte">45</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:byte">6</anyType>
+      <anyType xsi:type="xsd:byte">3</anyType>
+      <anyType xsi:type="xsd:byte">8</anyType>
+      <anyType xsi:type="xsd:byte">3</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xmlns:q2="http://microsoft.com/wsdl/types/" xsi:type="q2:char">97</anyType>
+      <anyType xmlns:q3="http://microsoft.com/wsdl/types/" xsi:type="q3:char">98</anyType>
+      <anyType xmlns:q4="http://microsoft.com/wsdl/types/" xsi:type="q4:char">99</anyType>
+      <anyType xmlns:q5="http://microsoft.com/wsdl/types/" xsi:type="q5:char">100</anyType>
+      <anyType xmlns:q6="http://microsoft.com/wsdl/types/" xsi:type="q6:char">101</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:short">4</anyType>
+      <anyType xsi:type="xsd:short">5</anyType>
+      <anyType xsi:type="xsd:short">7</anyType>
+      <anyType xsi:type="xsd:short">7</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:unsignedShort">0</anyType>
+      <anyType xsi:type="xsd:unsignedShort">0</anyType>
+      <anyType xsi:type="xsd:unsignedShort">0</anyType>
+      <anyType xsi:type="xsd:unsignedShort">0</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:int">88</anyType>
+      <anyType xsi:type="xsd:int">55</anyType>
+      <anyType xsi:type="xsd:int">22</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:unsignedInt">543535</anyType>
+      <anyType xsi:type="xsd:unsignedInt">4432</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:long">88</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:unsignedLong">8348538853</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:dateTime">0001-01-01T00:00:00</anyType>
+      <anyType xsi:type="xsd:dateTime">9999-12-31T23:59:59.9999999</anyType>
+      <anyType xsi:type="xsd:dateTime">2014-10-08T23:16:17.7754175Z</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:decimal">2.3</anyType>
+      <anyType xsi:type="xsd:decimal">4.5</anyType>
+      <anyType xsi:type="xsd:decimal">6.7</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:double">77</anyType>
+      <anyType xsi:type="xsd:double">66</anyType>
+      <anyType xsi:type="xsd:double">55</anyType>
+      <anyType xsi:type="xsd:double">44</anyType>
+      <anyType xsi:type="xsd:double">33</anyType>
+      <anyType xsi:type="xsd:double">22</anyType>
+      <anyType xsi:type="xsd:double">11</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:float">5.67</anyType>
+      <anyType xsi:type="xsd:float">9.87</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:string">This</anyType>
+      <anyType xsi:type="xsd:string">is</anyType>
+      <anyType xsi:type="xsd:string">the</anyType>
+      <anyType xsi:type="xsd:string">one</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:boolean">true</anyType>
+      <anyType xsi:nil="true" />
+      <anyType xsi:type="xsd:boolean">false</anyType>
+    </anyType>
+    <anyType xsi:type="ArrayOfAnyType">
+      <anyType xsi:type="xsd:int">14</anyType>
+      <anyType xsi:nil="true" />
+      <anyType xsi:type="xsd:int">0</anyType>
+      <anyType xsi:type="xsd:int">7</anyType>
+    </anyType>
+  </Values>
+  <NullableArray>
+    <boolean>true</boolean>
+    <boolean xsi:nil="true" />
+    <boolean>false</boolean>
+  </NullableArray>
+  <StringArray>
+    <string>yes</string>
+    <string xsi:nil="true" />
+    <string>no</string>
+  </StringArray>
+</ExampleTestData1>

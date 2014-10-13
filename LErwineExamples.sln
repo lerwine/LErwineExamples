@@ -1,0 +1,134 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExamples", "WpfExamples\WpfExamples.csproj", "{25FA4E9B-8FB2-4949-A333-362235C20BD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Snippets", "Code Snippets", "{ED584347-6B89-43BC-94DF-50A2128E6D98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp", "CSharp", "{51639986-7CD0-49CB-B8BD-E4048880BD71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetFX30", "NetFX30", "{1C982E4E-57DF-42FB-9BE3-581FAC8E1513}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{98579357-11C3-45AC-BC79-C7A22DA2D7DE}"
+	ProjectSection(SolutionItems) = preProject
+		Code Snippets\CSharp\NetFX30\WPF\propdp2.snippet = Code Snippets\CSharp\NetFX30\WPF\propdp2.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdpc.snippet = Code Snippets\CSharp\NetFX30\WPF\propdpc.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdpcoll.snippet = Code Snippets\CSharp\NetFX30\WPF\propdpcoll.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdpcollro.snippet = Code Snippets\CSharp\NetFX30\WPF\propdpcollro.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdpe.snippet = Code Snippets\CSharp\NetFX30\WPF\propdpe.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdpro.snippet = Code Snippets\CSharp\NetFX30\WPF\propdpro.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdproc.snippet = Code Snippets\CSharp\NetFX30\WPF\propdproc.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdproe.snippet = Code Snippets\CSharp\NetFX30\WPF\propdproe.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdps.snippet = Code Snippets\CSharp\NetFX30\WPF\propdps.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdpsc.snippet = Code Snippets\CSharp\NetFX30\WPF\propdpsc.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdpse.snippet = Code Snippets\CSharp\NetFX30\WPF\propdpse.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdpsro.snippet = Code Snippets\CSharp\NetFX30\WPF\propdpsro.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdpsroc.snippet = Code Snippets\CSharp\NetFX30\WPF\propdpsroc.snippet
+		Code Snippets\CSharp\NetFX30\WPF\propdpsroe.snippet = Code Snippets\CSharp\NetFX30\WPF\propdpsroe.snippet
+		Code Snippets\CSharp\NetFX30\WPF\proprelaycmd.snippet = Code Snippets\CSharp\NetFX30\WPF\proprelaycmd.snippet
+		Code Snippets\CSharp\NetFX30\WPF\proprelaycmde.snippet = Code Snippets\CSharp\NetFX30\WPF\proprelaycmde.snippet
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExamplesUnitTestProject", "WpfExamplesUnitTestProject\WpfExamplesUnitTestProject.csproj", "{69782065-5446-46A5-85E0-7A0EB504860A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextTransformationExtension", "TextTransformationExtension\TextTransformationExtension.csproj", "{ADD32747-CBBE-4355-A064-70893DE67931}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XmlSerializing", "XmlSerializing", "{D14B2B1B-0B7F-4604-B955-7B216E74AB66}"
+	ProjectSection(SolutionItems) = preProject
+		Code Snippets\CSharp\XmlSerializing\propXmlArray.snippet = Code Snippets\CSharp\XmlSerializing\propXmlArray.snippet
+		Code Snippets\CSharp\XmlSerializing\propXmlAttrClass.snippet = Code Snippets\CSharp\XmlSerializing\propXmlAttrClass.snippet
+		Code Snippets\CSharp\XmlSerializing\propXmlAttrString.snippet = Code Snippets\CSharp\XmlSerializing\propXmlAttrString.snippet
+		Code Snippets\CSharp\XmlSerializing\propXmlAttrStringN.snippet = Code Snippets\CSharp\XmlSerializing\propXmlAttrStringN.snippet
+		Code Snippets\CSharp\XmlSerializing\propXmlAttrStruct.snippet = Code Snippets\CSharp\XmlSerializing\propXmlAttrStruct.snippet
+		Code Snippets\CSharp\XmlSerializing\propXmlElementClass.snippet = Code Snippets\CSharp\XmlSerializing\propXmlElementClass.snippet
+		Code Snippets\CSharp\XmlSerializing\propXmlElementString.snippet = Code Snippets\CSharp\XmlSerializing\propXmlElementString.snippet
+		Code Snippets\CSharp\XmlSerializing\propXmlElementStringN.snippet = Code Snippets\CSharp\XmlSerializing\propXmlElementStringN.snippet
+		Code Snippets\CSharp\XmlSerializing\propXmlElementStruct.snippet = Code Snippets\CSharp\XmlSerializing\propXmlElementStruct.snippet
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestHelpers", "UnitTestHelpers\UnitTestHelpers.csproj", "{CBF6716A-68E1-4A03-830B-8D3268106154}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestHelpersUnitTestProject", "UnitTestHelpersUnitTestProject\UnitTestHelpersUnitTestProject.csproj", "{5F7163AB-7CD8-4953-A98C-727531E5B07F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGDIClassLibrary", "ExampleGDIClassLibrary\ExampleGDIClassLibrary.csproj", "{8B20F445-6B4A-4898-AAF3-2B67789006AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGDIUnitTestProject", "ExampleGDIUnitTestProject\ExampleGDIUnitTestProject.csproj", "{DAD43D4A-E34B-43B1-91B8-11B21F784D64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComponentModel", "ComponentModel", "{A819EEDD-1100-4345-8F79-7CD16F46C2A4}"
+	ProjectSection(SolutionItems) = preProject
+		Code Snippets\CSharp\ComponentModel\propertychanged.snippet = Code Snippets\CSharp\ComponentModel\propertychanged.snippet
+		Code Snippets\CSharp\ComponentModel\propinotify.snippet = Code Snippets\CSharp\ComponentModel\propinotify.snippet
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsExamples", "WindowsFormsExamples\WindowsFormsExamples.csproj", "{5448D39E-E301-47C3-A599-35D50D00D9E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnippetPlus", "SnippetPlus\SnippetPlus.csproj", "{3AC12431-D774-4F7C-984A-D2F6C616E717}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LennysWpfLibrary", "LennysWpfLibrary\LennysWpfLibrary.csproj", "{58A26639-C886-43FE-844F-54842332FEF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfUnitTestProject", "WpfUnitTestProject\WpfUnitTestProject.csproj", "{561D9D2E-35C8-4241-870E-A7A0D2CCA2BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25FA4E9B-8FB2-4949-A333-362235C20BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25FA4E9B-8FB2-4949-A333-362235C20BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25FA4E9B-8FB2-4949-A333-362235C20BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25FA4E9B-8FB2-4949-A333-362235C20BD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69782065-5446-46A5-85E0-7A0EB504860A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69782065-5446-46A5-85E0-7A0EB504860A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69782065-5446-46A5-85E0-7A0EB504860A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69782065-5446-46A5-85E0-7A0EB504860A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD32747-CBBE-4355-A064-70893DE67931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD32747-CBBE-4355-A064-70893DE67931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD32747-CBBE-4355-A064-70893DE67931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD32747-CBBE-4355-A064-70893DE67931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF6716A-68E1-4A03-830B-8D3268106154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF6716A-68E1-4A03-830B-8D3268106154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF6716A-68E1-4A03-830B-8D3268106154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF6716A-68E1-4A03-830B-8D3268106154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7163AB-7CD8-4953-A98C-727531E5B07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7163AB-7CD8-4953-A98C-727531E5B07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7163AB-7CD8-4953-A98C-727531E5B07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7163AB-7CD8-4953-A98C-727531E5B07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B20F445-6B4A-4898-AAF3-2B67789006AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B20F445-6B4A-4898-AAF3-2B67789006AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B20F445-6B4A-4898-AAF3-2B67789006AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B20F445-6B4A-4898-AAF3-2B67789006AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD43D4A-E34B-43B1-91B8-11B21F784D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD43D4A-E34B-43B1-91B8-11B21F784D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD43D4A-E34B-43B1-91B8-11B21F784D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD43D4A-E34B-43B1-91B8-11B21F784D64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5448D39E-E301-47C3-A599-35D50D00D9E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5448D39E-E301-47C3-A599-35D50D00D9E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5448D39E-E301-47C3-A599-35D50D00D9E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5448D39E-E301-47C3-A599-35D50D00D9E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AC12431-D774-4F7C-984A-D2F6C616E717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC12431-D774-4F7C-984A-D2F6C616E717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC12431-D774-4F7C-984A-D2F6C616E717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC12431-D774-4F7C-984A-D2F6C616E717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A26639-C886-43FE-844F-54842332FEF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A26639-C886-43FE-844F-54842332FEF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A26639-C886-43FE-844F-54842332FEF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A26639-C886-43FE-844F-54842332FEF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561D9D2E-35C8-4241-870E-A7A0D2CCA2BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561D9D2E-35C8-4241-870E-A7A0D2CCA2BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561D9D2E-35C8-4241-870E-A7A0D2CCA2BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561D9D2E-35C8-4241-870E-A7A0D2CCA2BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{51639986-7CD0-49CB-B8BD-E4048880BD71} = {ED584347-6B89-43BC-94DF-50A2128E6D98}
+		{1C982E4E-57DF-42FB-9BE3-581FAC8E1513} = {51639986-7CD0-49CB-B8BD-E4048880BD71}
+		{98579357-11C3-45AC-BC79-C7A22DA2D7DE} = {1C982E4E-57DF-42FB-9BE3-581FAC8E1513}
+		{D14B2B1B-0B7F-4604-B955-7B216E74AB66} = {51639986-7CD0-49CB-B8BD-E4048880BD71}
+		{A819EEDD-1100-4345-8F79-7CD16F46C2A4} = {51639986-7CD0-49CB-B8BD-E4048880BD71}
+	EndGlobalSection
+EndGlobal
