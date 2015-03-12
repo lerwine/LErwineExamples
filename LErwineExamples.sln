@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExamples", "WpfExamples\WpfExamples.csproj", "{25FA4E9B-8FB2-4949-A333-362235C20BD7}"
 EndProject
@@ -70,6 +70,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LennysWpfLibrary", "LennysW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfUnitTestProject", "WpfUnitTestProject\WpfUnitTestProject.csproj", "{561D9D2E-35C8-4241-870E-A7A0D2CCA2BB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NestedComponents", "NestedComponents", "{DE55852F-3B43-4A6F-B3AA-E9030F67B8ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NestedComponents", "NestedComponents\NestedComponents\NestedComponents.csproj", "{F7CE9FE2-2762-4800-8C90-B00399BFCCA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -120,6 +124,10 @@ Global
 		{561D9D2E-35C8-4241-870E-A7A0D2CCA2BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{561D9D2E-35C8-4241-870E-A7A0D2CCA2BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{561D9D2E-35C8-4241-870E-A7A0D2CCA2BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7CE9FE2-2762-4800-8C90-B00399BFCCA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CE9FE2-2762-4800-8C90-B00399BFCCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7CE9FE2-2762-4800-8C90-B00399BFCCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CE9FE2-2762-4800-8C90-B00399BFCCA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,5 +138,6 @@ Global
 		{98579357-11C3-45AC-BC79-C7A22DA2D7DE} = {1C982E4E-57DF-42FB-9BE3-581FAC8E1513}
 		{D14B2B1B-0B7F-4604-B955-7B216E74AB66} = {51639986-7CD0-49CB-B8BD-E4048880BD71}
 		{A819EEDD-1100-4345-8F79-7CD16F46C2A4} = {51639986-7CD0-49CB-B8BD-E4048880BD71}
+		{F7CE9FE2-2762-4800-8C90-B00399BFCCA0} = {DE55852F-3B43-4A6F-B3AA-E9030F67B8ED}
 	EndGlobalSection
 EndGlobal

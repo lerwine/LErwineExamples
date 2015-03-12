@@ -51,6 +51,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Collections\ObjectInstanceComparer.cs" />
     <Compile Include="Generics\BooleanEqualityHelper.cs" />
     <Compile Include="Generics\EnumEqualityHelper.cs" />
     <Compile Include="Generics\ComparableGenericEqualityHelper.cs" />

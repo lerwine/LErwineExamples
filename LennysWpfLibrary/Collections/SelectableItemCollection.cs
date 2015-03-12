@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 namespace LennysWpfLibrary.Collections
 {
@@ -21,8 +20,18 @@ namespace LennysWpfLibrary.Collections
             get { return this._multiSelect; }
             set
             {
+                if (this._multiSelect == value)
+                    return;
+
+                this._multiSelect = value;
+
+                if (!value && this.SelectedItem != null)
+                {
+                    foreach (TItem item in this.Where(i => i != null && !Object.ReferenceEquals(i, this.SelectedItem)).ToArray())
+                        item.IsSelected = false;
+                }
+
                 this.OnMultiSelectChanged();
-                throw new NotImplementedException();
             }
         }
 
@@ -38,7 +47,7 @@ namespace LennysWpfLibrary.Collections
         private ObservableCollection<TItem> _innerSelectedItems = new ObservableCollection<TItem>();
         private ReadOnlyObservableCollection<TItem> _selectedItems = null;
 
-        protected ReadOnlyObservableCollection<TItem> SelectedItems
+        public ReadOnlyObservableCollection<TItem> SelectedItems
         {
             get
             {
@@ -67,7 +76,23 @@ namespace LennysWpfLibrary.Collections
             get { return this._selectedItem; }
             set
             {
-                throw new NotImplementedException();
+                this.DetectAndRaiseSelectedEvents(() =>
+                {
+                    this._selectedItem = value;
+
+                    if (value == null)
+                    {
+                        this._selectedIndex = this.TakeWhile(i => i != null).Count();
+                        if (this._selectedIndex == this.Count)
+                            this._selectedIndex = -1;
+                    }
+                    else
+                    {
+                        this._selectedIndex = this.TakeWhile(i => i == null || !Object.ReferenceEquals(i, value)).Count();
+                        if (this._selectedIndex == this.Count)
+                            throw new ArgumentOutOfRangeException();
+                    }
+                });
             }
         }
 
@@ -97,42 +122,63 @@ namespace LennysWpfLibrary.Collections
             get { return this._selectedIndex; }
             set
             {
-                int previousIndex = this._selectedIndex;
-                this._selectedIndex = (value < -1 || value >= this.Count) ? -1 : value;
+                this.DetectAndRaiseSelectedEvents(() =>
+                {
+                    if (value < -1 || value >= this.Count)
+                        throw new IndexOutOfRangeException();
 
-                if (previousIndex == this._selectedIndex)
-                    return;
-
-                TItem previousItem = this._selectedItem;
-                this._selectedItem = (value == -1) ? default(TItem) : this[value];
-
-                // TODO: Need to determine best way to update SelectedItems. Thhe Item.IsSelectedChanged event may not be best place because of possibility of a null value at the selected index
-                // TODO: If selected index is not -1 and this._selectedItem is not null, then this.SelectedItems needs to contain a null value
-                // TODO: With each scenario: MultiSelect is true or false; include whether this.SelectedItems involves containing a null value
-                // TODO: Scenario = previousItem == null && this._selectedItem == null
-                // TODO: Scenario = previousItem != null && this._selectedItem == null
-                // TODO: Scenario = previousItem == null && this._selectedItem != null
-                // TODO: Scenario = previousItem != null && this._selectedItem != null && Object.ReferenceEquals(previousItem, this._selectedItem)
-                // TODO: Scenario = previousItem != null && this._selectedItem != null && !Object.ReferenceEquals(previousItem, this._selectedItem) && this._selectedItem.IsSelected
-                // TODO: Scenario = previousItem != null && this._selectedItem != null && !Object.ReferenceEquals(previousItem, this._selectedItem) && !this._selectedItem.IsSelected
-
-                //if (this.IsUnselectedValue(this._selectedItem))
-                //{
-                //    foreach (TItem item in this._innerSelectedItems.ToArray())
-                //        item.IsSelected = false;
-                //}
-                //else if (!this.MultiSelect)
-                //{
-                //    foreach (TItem item in this._innerSelectedItems.Where(i => this.IsSame(i, this._selectedItem)).ToArray())
-                //        item.IsSelected = false;
-                //}
-
-                this.RaiseSelectedIndexChanged();
-
-                throw new NotImplementedException();
-                //if ((this.IsUnselectedValue(previousItem)) ? !this.IsUnselectedValue(this._selectedItem) : (this.IsUnselectedValue(this._selectedItem) || this.IsSame(previousItem, this._selectedItem)))
-                //    this.RaiseSelectedItemChanged(this._selectedItem);
+                    this._selectedIndex = value;
+                    this._selectedItem = (value == -1) ? null : this[value];
+                });
             }
+        }
+
+        private void DetectAndRaiseSelectedEvents(Action fieldUpdateMethod)
+        {
+            TItem oldItem, newItem;
+            int oldIndex, newIndex;
+            Exception error = null;
+
+            lock (this._innerSelectedItems)
+            {
+                oldIndex = this._selectedIndex;
+                oldItem = this._selectedItem;
+                newIndex = this._selectedIndex;
+                newItem = this._selectedItem;
+
+                try
+                {
+                    fieldUpdateMethod();
+                    newIndex = this._selectedIndex;
+                    newItem = this._selectedItem;
+                }
+                catch (Exception exc)
+                {
+                    error = exc;
+                    this._selectedIndex = oldIndex;
+                    this._selectedItem = oldItem;
+                }
+            }
+
+            if (error != null)
+                throw error;
+
+            if ((oldItem == null) ? (newItem != null) : (newItem == null || !Object.ReferenceEquals(oldItem, newItem)))
+            {
+                if (newItem != null)
+                {
+                    if (newItem.IsSelected)
+                        newItem.IsSelected = true;
+                }
+
+                if (!this.MultiSelect && oldItem != null)
+                    oldItem.IsSelected = false;
+
+                this.RaiseSelectedItemChanged(newItem);
+            }
+
+            if (oldIndex != newIndex)
+                this.RaiseSelectedIndexChanged();
         }
 
         protected void RaiseSelectedIndexChanged()
@@ -170,22 +216,20 @@ namespace LennysWpfLibrary.Collections
 
         protected virtual void OnInitializeCollection()
         {
-            Type itemType = typeof(TItem);
+            this._selectedItem = this.LastOrDefault(i => i.IsSelected);
+            this._selectedIndex = (this._selectedItem == null) ? -1 : this.Reverse().SkipWhile(i => i == null || !Object.ReferenceEquals(i, this._selectedItem)).Count() - 1;
 
-            //if (itemType.IsByRef)
-            //IEnumerable<TItem> fromFirstSelected = this.SkipWhile(i => i == null || !i.IsSelected);
+            ObjectInstanceComparer<TItem> comparer = new ObjectInstanceComparer<TItem>();
+            if (this.MultiSelect)
+            {
+                foreach (TItem item in this.Where(i => i != null && i.IsSelected).Distinct(comparer))
+                    this._innerSelectedItems.Add(item);
+            }
+            else if (this._selectedItem != null)
+                this._innerSelectedItems.Add(this._selectedItem);
 
-            //this._selectedItem = fromFirstSelected.FirstOrDefault();
-            //this._selectedIndex = (this._selectedItem == null) ? -1 : fromFirstSelected.Count();
-            //if (!this.MultiSelect)
-            //{
-            //    foreach (TItem item in fromFirstSelected.Skip(1))
-            //        item.IsSelected = false;
-            //}
-
-            foreach (TItem item in this.Where(i => i != null))
+            foreach (TItem item in this.Distinct(comparer))
                 this.OnAttachItemEvents(item);
-            throw new NotImplementedException();
         }
 
         #endregion
@@ -224,9 +268,43 @@ namespace LennysWpfLibrary.Collections
                 throw new InvalidOperationException("Item is not contained by this collection.");
 
             if (item.IsSelected)
-                this.SelectedItem = item;
-            else  if (this.SelectedItem != null && Object.ReferenceEquals(this.SelectedItem, item))
-                this.SelectedItem = this._innerSelectedItems.LastOrDefault(i => !Object.ReferenceEquals(i, item));
+            {
+                if (this.SelectedIndex == -1 || (!this.MultiSelect && !Object.ReferenceEquals(this.SelectedItem, item)))
+                    this.SelectedItem = item;
+
+                lock (this._innerSelectedItems)
+                {
+                    if (item.IsSelected && this.Contains(item) && !this._innerSelectedItems.Contains(item))
+                    {
+                        if (this._innerSelectedItems.Count == 0 || this.MultiSelect)
+                            this._innerSelectedItems.Add(item);
+                        else
+                        {
+                            while (this._innerSelectedItems.Count > 0 && !Object.ReferenceEquals(item, this._innerSelectedItems[0]))
+                                this._innerSelectedItems.RemoveAt(0);
+
+                            if (this._innerSelectedItems.Count == 0)
+                                this._innerSelectedItems.Add(item);
+                            else
+                            {
+                                while (this._innerSelectedItems.Count > 1)
+                                    this._innerSelectedItems.RemoveAt(1);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (this.SelectedItem != null && Object.ReferenceEquals(this.SelectedItem, item))
+                    this.SelectedItem = this.SelectedItems.LastOrDefault();
+
+                lock (this._innerSelectedItems)
+                {
+                    if ((!item.IsSelected || !this.Contains(item)) && this._innerSelectedItems.Contains(item))
+                        this._innerSelectedItems.Remove(item);
+                }
+            }
 
             this.OnItemIsSelectedChanged(new CollectionItemEventArgs<TItem>(item));
         }
@@ -301,42 +379,103 @@ namespace LennysWpfLibrary.Collections
 
         protected override void InsertItem(int index, TItem item)
         {
-            throw new NotImplementedException();
             base.InsertItem(index, item);
+
+            if (item.IsSelected && this.SelectedIndex == -1)
+                this.SelectedItem = item;
+
+            lock (this._innerSelectedItems)
+            {
+                if (this.MultiSelect && item != null && item.IsSelected && !this._innerSelectedItems.Any(i => Object.ReferenceEquals(i, item)))
+                    this._innerSelectedItems.Add(item);
+            }
+
+            if (item != null)
+                this.OnAttachItemEvents(item);
         }
 
         protected override void MoveItem(int oldIndex, int newIndex)
         {
-            throw new NotImplementedException();
+            TItem replacedItem = (newIndex < 0 || newIndex >= this.Count) ? null : this[newIndex];
+
             base.MoveItem(oldIndex, newIndex);
+
+            if (replacedItem == null || this.Any(i => i != null && Object.ReferenceEquals(i, replacedItem)))
+                return;
+
+            lock (this._innerSelectedItems)
+            {
+                replacedItem = null;
+                int index = this._innerSelectedItems.TakeWhile(i => !Object.ReferenceEquals(i, replacedItem)).Count();
+                if (index < this._innerSelectedItems.Count)
+                    this._innerSelectedItems.RemoveAt(index);
+            }
+
+            if (replacedItem != null)
+                this.OnDetachItemEvents(replacedItem);
         }
 
         protected override void RemoveItem(int index)
         {
-            throw new NotImplementedException();
+            TItem itemToRemove = (index < 0 || index >= this.Count) ? null : this[index];
+
             base.RemoveItem(index);
+
+            if (itemToRemove == null || this.Any(i => i != null && Object.ReferenceEquals(i, itemToRemove)))
+                return;
+
+            lock (this._innerSelectedItems)
+            {
+                int idx = this._innerSelectedItems.TakeWhile(i => !Object.ReferenceEquals(i, itemToRemove)).Count();
+                if (idx < this._innerSelectedItems.Count)
+                    this._innerSelectedItems.RemoveAt(index);
+            }
+
+            this.OnDetachItemEvents(itemToRemove);
+
+            if (this.SelectedItem != null && Object.ReferenceEquals(itemToRemove, this.SelectedItem))
+                this.SelectedItem = this.SelectedItems.LastOrDefault();
         }
 
         protected override void SetItem(int index, TItem item)
         {
-            throw new NotImplementedException();
+            TItem replacedItem = (index < 0 || index >= this.Count) ? null : this[index];
+
+            bool shouldAttach = item != null && !this.Any(i => i != null && Object.ReferenceEquals(i, item));
+
             base.SetItem(index, item);
+
+            if ((item == null) ? (replacedItem == null) : (replacedItem != null && Object.ReferenceEquals(item, replacedItem)))
+                return;
+
+            if (shouldAttach)
+                this.OnAttachItemEvents(item);
+
+            if (replacedItem == null || this.Any(i => i != null && Object.ReferenceEquals(i, replacedItem)))
+                return;
+
+            lock (this._innerSelectedItems)
+            {
+                replacedItem = null;
+                int idx = this._innerSelectedItems.TakeWhile(i => !Object.ReferenceEquals(i, replacedItem)).Count();
+                if (idx < this._innerSelectedItems.Count)
+                    this._innerSelectedItems.RemoveAt(index);
+            }
+
+            if (replacedItem != null)
+                this.OnDetachItemEvents(replacedItem);
         }
 
         protected override void ClearItems()
         {
-            throw new NotImplementedException();
+            TItem[] removedItems = this.Where(i => i != null).ToArray();
+
             base.ClearItems();
+
+            foreach (TItem item in removedItems)
+                this.OnDetachItemEvents(item);
         }
 
         #endregion
-    }
-
-    public class SelectableItemCollection<TItem, TValue> : SelectableItemCollection<TItem>
-        where TItem : class, ISelectableCollectionItem<TValue>
-    {
-        public SelectableItemCollection() : base() { }
-        public SelectableItemCollection(IEnumerable<TItem> collection) : base(collection) { }
-        public SelectableItemCollection(List<TItem> list) : base(list) { }
     }
 }

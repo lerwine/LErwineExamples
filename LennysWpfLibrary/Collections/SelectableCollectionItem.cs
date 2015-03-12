@@ -36,7 +36,7 @@ namespace LennysWpfLibrary.Collections
 
         public static readonly DependencyProperty IsSelectedProperty =
                     DependencyProperty.Register("IsSelected", typeof(bool), typeof(SelectableCollectionItem),
-                        new PropertyMetadata(0, SelectableCollectionItem.IsSelected_PropertyChanged));
+                        new PropertyMetadata(false, SelectableCollectionItem.IsSelected_PropertyChanged));
 
         public bool IsSelected
         {
@@ -59,6 +59,14 @@ namespace LennysWpfLibrary.Collections
 
             if (this.IsSelectedChanged != null)
                 this.IsSelectedChanged(this, EventArgs.Empty);
+
+            if (newValue)
+            {
+                if (this.Selected != null)
+                    this.Selected(this, EventArgs.Empty);
+            }
+            else if (this.Deselected != null)
+                this.Deselected(this, EventArgs.Empty);
         }
 
         #endregion
@@ -285,24 +293,6 @@ namespace LennysWpfLibrary.Collections
         public override string ToString()
         {
             return this.DisplayText;
-        }
-
-        public abstract class ConversionHelper<V> : IEqualityComparer<V>
-        {
-            public abstract bool Equals(V x, V y);
-            public abstract int GetHashCode(V obj);
-        }
-
-        private static Func<T, string> _toString = null;
-
-        public static string ToString(T value)
-        {
-            if (SelectableCollectionItem<T>._toString != null)
-                return SelectableCollectionItem<T>._toString(value);
-
-            Type t = typeof(T);
-
-            throw new NotImplementedException();
         }
     }
 }
