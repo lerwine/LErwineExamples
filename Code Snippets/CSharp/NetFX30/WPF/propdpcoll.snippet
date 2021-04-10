@@ -35,24 +35,17 @@
       </Declarations>
       <Code Language="csharp">
 <![CDATA[
-#region $property$ Property Members
-
-public const string PropertyName_$property$ = "$property$";
-
 public static readonly DependencyPropertyKey $property$PropertyKey =
-    DependencyProperty.RegisterReadOnly($ownerclass$.PropertyName_$property$, typeof($collType$<$itemType$>), typeof($ownerclass$),
+    DependencyProperty.RegisterReadOnly(nameof($property$), typeof($collType$<$itemType$>), typeof($ownerclass$),
         new PropertyMetadata(new $collType$<$itemType$>()));
 
-public static readonly DependencyProperty $property$Property =
-    $ownerclass$.$property$PropertyKey.DependencyProperty;
+public static readonly DependencyProperty $property$Property = $property$PropertyKey.DependencyProperty;
 
 public $collType$<$itemType$> $property$
 {
-    get { return ($collType$<$itemType$>)(this.GetValue($ownerclass$.$property$Property)); }
-    private set { this.SetValue($ownerclass$.$property$PropertyKey, value); }
+    get { return ($collType$<$itemType$>)(this.GetValue($property$Property)); }
+    private set { this.SetValue($property$PropertyKey, value); }
 }
-
-#endregion
 $end$]]>
       </Code>
     </Snippet>

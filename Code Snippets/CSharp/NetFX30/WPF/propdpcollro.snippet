@@ -36,45 +36,40 @@
       <Code Language="csharp">
         <![CDATA[
 #region $property$ Property Members
-
-public const string PropertyName_Inner$property$ = "Inner$property$";
-public const string PropertyName_$property$ = "$property$";
-
+        
 private static readonly DependencyPropertyKey Inner$property$PropertyKey =
-    DependencyProperty.RegisterReadOnly($ownerclass$.PropertyName_Inner$property$, typeof($collType$<$itemType$>), typeof($ownerclass$),
+    DependencyProperty.RegisterReadOnly(nameof(Inner$property$), typeof($collType$<$itemType$>), typeof($ownerclass$),
         new PropertyMetadata(new $collType$<$itemType$>()));
 
 private static readonly DependencyPropertyKey $property$PropertyKey =
-    DependencyProperty.RegisterReadOnly($ownerclass$.PropertyName_$property$, typeof(ReadOnly$collType$<$itemType$>), typeof($ownerclass$),
+    DependencyProperty.RegisterReadOnly(nameof($property$), typeof(ReadOnly$collType$<$itemType$>), typeof($ownerclass$),
         new PropertyMetadata(null));
 
-protected static readonly DependencyProperty Inner$property$Property =
-    $ownerclass$.Inner$property$PropertyKey.DependencyProperty;
+protected static readonly DependencyProperty Inner$property$Property = Inner$property$PropertyKey.DependencyProperty;
 
-public static readonly DependencyProperty $property$Property =
-    $ownerclass$.$property$PropertyKey.DependencyProperty;
+public static readonly DependencyProperty $property$Property = $property$PropertyKey.DependencyProperty;
 
 protected $collType$<$itemType$> Inner$property$
 {
-    get { return ($collType$<$itemType$>)(this.GetValue($ownerclass$.Inner$property$Property)); }
-    private set { this.SetValue($ownerclass$.Inner$property$PropertyKey, value); }
+    get { return ($collType$<$itemType$>)(GetValue(Inner$property$Property)); }
+    private set { SetValue(Inner$property$PropertyKey, value); }
 }
 
 public ReadOnly$collType$<$itemType$> $property$
 {
     get
     {
-        ReadOnly$collType$<$itemType$> value = (ReadOnly$collType$<$itemType$>)(this.GetValue($ownerclass$.$property$Property));
+        ReadOnly$collType$<$itemType$> value = (ReadOnly$collType$<$itemType$>)(GetValue($property$Property));
         
         if (value == null)
         {
-            value = new ReadOnly$collType$<$itemType$>(this.Inner$property$);
-            this.SetValue($ownerclass$.$property$PropertyKey, value);
+            value = new ReadOnly$collType$<$itemType$>(Inner$property$);
+            SetValue($property$PropertyKey, value);
         }
         
         return value;
     }
-    private set { this.SetValue($ownerclass$.$property$PropertyKey, value); }
+    private set { SetValue($property$PropertyKey, value); }
 }
 
 #endregion

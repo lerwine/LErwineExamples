@@ -25,27 +25,27 @@
       </Declarations>
       <Code Language="csharp">
 <![CDATA[
-#region $command$ Command Property Members
-
 public event EventHandler $command$;
 
-private Events.RelayCommand _$field$Command = null;
+private Commands.RelayCommand _$field$Command = null;
 
-public Events.RelayCommand $command$Command
+public Commands.RelayCommand $command$Command
 {
     get
     {
-        if (this._$field$Command == null)
-            this._$field$Command = new Events.RelayCommand(this.On$command$);
-
-        return this._$field$Command;
+        if (_$field$Command == null)
+            _$field$Command = new Commands.RelayCommand(parameter =>
+            {
+              try { On$command$(parameter); }
+              finally { $command$?.Invoke(this, EventArgs.Empty); }
+            });
+        return _$field$Command;
     }
 }
 
 protected virtual void On$command$(object parameter)
 {
-    if (this.$command$ != null)
-        this.$command$(this, EventArgs.Empty);
+  // TODO: Implement On$command$ Logic
 }
 
 #endregion
