@@ -38,11 +38,11 @@
 public static readonly DependencyProperty $property$Property =
     DependencyProperty.Register(nameof($property$), typeof($type$), typeof($ownerclass$),
         new PropertyMetadata($defaultvalue$, (DependencyObject d, DependencyPropertyChangedEventArgs e) =>
-            (d as $ownerclass$).On$property$PropertyChanged(($type$)(e.OldValue), ($type$)(e.NewValue))));
+            (d as $ownerclass$).On$property$PropertyChanged(($type$)e.OldValue, ($type$)e.NewValue)));
 
 public $type$ $property$
 {
-    get { return ($type$)(GetValue($property$Property)); }
+    get { return ($type$)GetValue($property$Property); }
     set { this.SetValue($property$Property, value); }
 }
 

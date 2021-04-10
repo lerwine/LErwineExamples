@@ -44,13 +44,13 @@ public static readonly DependencyProperty $property$Property =
 
 public $type$ $property$
 {
-    get { return ($type$)(GetValue($property$Property)); }
+    get { return ($type$)GetValue($property$Property); }
     set { SetValue($property$Property, value); }
 }
 
 protected virtual void On$property$PropertyChanged(DependencyPropertyChangedEventArgs args)
 {
-    try { On$property$PropertyChanged(($type$)(args.OldValue), ($type$)(args.NewValue)); }
+    try { On$property$PropertyChanged(($type$)args.OldValue, ($type$)args.NewValue); }
     finally { $property$PropertyChanged?.Invoke(this, args); }
 }
 

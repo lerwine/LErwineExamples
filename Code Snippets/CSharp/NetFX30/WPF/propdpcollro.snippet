@@ -51,7 +51,7 @@ public static readonly DependencyProperty $property$Property = $property$Propert
 
 protected $collType$<$itemType$> Inner$property$
 {
-    get { return ($collType$<$itemType$>)(GetValue(Inner$property$Property)); }
+    get { return ($collType$<$itemType$>)GetValue(Inner$property$Property); }
     private set { SetValue(Inner$property$PropertyKey, value); }
 }
 
@@ -59,7 +59,7 @@ public ReadOnly$collType$<$itemType$> $property$
 {
     get
     {
-        ReadOnly$collType$<$itemType$> value = (ReadOnly$collType$<$itemType$>)(GetValue($property$Property));
+        ReadOnly$collType$<$itemType$> value = (ReadOnly$collType$<$itemType$>)GetValue($property$Property);
         
         if (value == null)
         {

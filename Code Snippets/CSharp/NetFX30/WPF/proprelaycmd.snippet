@@ -25,14 +25,14 @@
       </Declarations>
       <Code Language="csharp">
 <![CDATA[
-private Commands.RelayCommand _$field$Command = null;
+private Events.RelayCommand _$field$Command = null;
 
-public Commands.RelayCommand $command$Command
+public Events.RelayCommand $command$Command
 {
     get
     {
         if (_$field$Command == null)
-            _$field$Command = new Commands.RelayCommand(On$command$);
+            _$field$Command = new Events.RelayCommand(On$command$);
         return _$field$Command;
     }
 }

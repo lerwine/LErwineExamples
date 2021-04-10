@@ -27,14 +27,14 @@
 <![CDATA[
 public event EventHandler $command$;
 
-private Commands.RelayCommand _$field$Command = null;
+private Events.RelayCommand _$field$Command = null;
 
-public Commands.RelayCommand $command$Command
+public Events.RelayCommand $command$Command
 {
     get
     {
         if (_$field$Command == null)
-            _$field$Command = new Commands.RelayCommand(parameter =>
+            _$field$Command = new Events.RelayCommand(parameter =>
             {
               try { On$command$(parameter); }
               finally { $command$?.Invoke(this, EventArgs.Empty); }
