@@ -18,36 +18,34 @@
           <Default>MyClick</Default>
         </Literal>
         <Literal>
-          <ID>field</ID>
-          <ToolTip>Base Name for backing field</ToolTip>
-          <Default>myClick</Default>
+          <ID>ownerclass</ID>
+          <Function>ClassName()</Function>
+          <ToolTip>The owning class of this Property.  Typically the class that it is declared in.</ToolTip>
         </Literal>
       </Declarations>
       <Code Language="csharp">
 <![CDATA[
 public event EventHandler $command$;
 
-private Events.RelayCommand _$field$Command = null;
+private static readonly DependencyPropertyKey $command$CommandPropertyKey = DependencyProperty.RegisterReadOnly(nameof($command$Command),
+    typeof(Commands.RelayCommand), typeof($ownerclass$), new PropertyMetadata(null, null, (DependencyObject d, object baseValue) =>
+        (baseValue is Commands.RelayCommand rc) ? rc : new Commands.RelayCommand((($ownerclass$)d).Invoke$command$Command)));
 
-public Events.RelayCommand $command$Command
+public static readonly DependencyProperty $command$CommandProperty = $command$CommandPropertyKey.DependencyProperty;
+
+public Commands.RelayCommand $command$Command => (Commands.RelayCommand)GetValue($command$CommandProperty);
+
+private void Invoke$command$Command(object parameter)
 {
-    get
-    {
-        if (_$field$Command == null)
-            _$field$Command = new Events.RelayCommand(parameter =>
-            {
-              try { On$command$(parameter); }
-              finally { $command$?.Invoke(this, EventArgs.Empty); }
-            });
-        return _$field$Command;
-    }
+  try { On$command$Execute(parameter); }
+  finally { $command$?.Invoke(this, EventArgs.Empty); }
 }
 
-protected virtual void On$command$(object parameter)
+private void On$command$Execute(object parameter)
 {
-  // TODO: Implement On$command$ Logic
+  // TODO: Implement On$command$Execute Logic$end$
 }
-$end$]]>
+]]>
       </Code>
     </Snippet>
   </CodeSnippet>
