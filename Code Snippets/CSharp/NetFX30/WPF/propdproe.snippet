@@ -37,7 +37,7 @@
         <![CDATA[
 public event DependencyPropertyChangedEventHandler $property$PropertyChanged;
 
-public static readonly DependencyPropertyKey $property$PropertyKey =
+private static readonly DependencyPropertyKey $property$PropertyKey =
     DependencyProperty.RegisterReadOnly(nameof($property$), typeof($type$), typeof($ownerclass$),
         new PropertyMetadata($defaultvalue$, (DependencyObject d, DependencyPropertyChangedEventArgs e) => 
             (d as $ownerclass$).On$property$PropertyChanged(e)));
